@@ -2,6 +2,7 @@ package com.devglan.controller;
 
 import com.devglan.model.User;
 import com.devglan.service.UserService;
+import io.swagger.annotations.Api;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.web.bind.annotation.*;
@@ -10,6 +11,7 @@ import java.util.List;
 
 @RestController
 @RequestMapping("/users")
+@Api(value = "/devicecommand", description = "Operations about device command")
 public class UserController {
 
     @Autowired
