@@ -11,14 +11,13 @@ import java.util.List;
 
 @RestController
 @RequestMapping("/users")
-@Api(value = "/devicecommand", description = "Operations about device command")
 public class UserController {
 
     @Autowired
     private UserService userService;
 
     @RequestMapping(value="/user", method = RequestMethod.GET)
-    public List<User> listUser(){
+    public List listUser(){
         return userService.findAll();
     }
 
