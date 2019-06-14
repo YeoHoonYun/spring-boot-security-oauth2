@@ -14,6 +14,7 @@ import org.springframework.context.annotation.Configuration;
 import org.springframework.web.servlet.config.annotation.ResourceHandlerRegistry;
 import org.springframework.web.servlet.config.annotation.WebMvcConfigurationSupport;
 
+import org.testng.annotations.ITestOrConfiguration;
 import springfox.documentation.builders.ApiInfoBuilder;
 import springfox.documentation.builders.ParameterBuilder;
 import springfox.documentation.builders.PathSelectors;
@@ -35,7 +36,6 @@ import springfox.documentation.swagger2.annotations.EnableSwagger2;
  * @author jason
  *
  */
-@Configuration
 @EnableSwagger2
 public class SwaggerConfig extends WebMvcConfigurationSupport{
 	private List<Parameter> listDocketParameters;

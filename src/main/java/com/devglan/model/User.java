@@ -13,7 +13,6 @@ public class User {
     @Column
     private String username;
     @Column
-    @JsonIgnore
     private String password;
     @Column
     private long salary;

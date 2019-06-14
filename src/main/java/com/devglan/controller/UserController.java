@@ -1,10 +1,11 @@
 package com.devglan.controller;
 
+import com.devglan.config.SecurityConfig;
 import com.devglan.model.User;
 import com.devglan.service.UserService;
-import io.swagger.annotations.Api;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
+import org.springframework.security.crypto.factory.PasswordEncoderFactories;
+import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -16,6 +17,9 @@ public class UserController {
     @Autowired
     private UserService userService;
 
+    @Autowired
+    private PasswordEncoder passwordEncoder;
+
     @RequestMapping(value="/user", method = RequestMethod.GET)
     public List listUser(){
         return userService.findAll();
@@ -23,6 +27,8 @@ public class UserController {
 
     @RequestMapping(value = "/user", method = RequestMethod.POST)
     public User create(@RequestBody User user){
+        user.setPassword(passwordEncoder.encode(user.getPassword()));
+
         return userService.save(user);
     }
 
