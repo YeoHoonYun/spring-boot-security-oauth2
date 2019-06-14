@@ -1,7 +1,5 @@
 package com.devglan.model;
 
-import com.fasterxml.jackson.annotation.JsonIgnore;
-
 import javax.persistence.*;
 
 @Entity

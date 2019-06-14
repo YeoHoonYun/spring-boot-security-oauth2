@@ -1,10 +1,8 @@
 package com.devglan.controller;
 
-import com.devglan.config.SecurityConfig;
 import com.devglan.model.User;
 import com.devglan.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.security.crypto.factory.PasswordEncoderFactories;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.web.bind.annotation.*;
 
